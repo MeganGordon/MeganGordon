@@ -1,0 +1,249 @@
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+%----------------------------------------------------------------------------------------
+%	PACKAGES %----------------------------------------------------------------------------------------
+\usepackage{comment}
+\usepackage{url}
+\usepackage{parskip} 	
+\usepackage{setspace}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Megan Gordon, }\large{M.A. Mathematics}\\[7.5pt]
+\href{https://github.com/MeganGordon}{\raisebox{-0.05\height}\faGithub\ MeganGordon} \ $|$ \ 
+\href{http://linkedin.com/in/megangordon000}{\raisebox{-0.05\height}\faLinkedin\ megangordon000} \ $|$ \ 
+\href{http://mathpost.asu.edu/~gordon/bio_education.html}{\raisebox{-0.05\height}\faGlobe \ Website} \ %$|$ \ 
+%\href{mailto:megan.gordon.000@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ gmail} \ %$|$ \ 
+%\href{tel:+#######}{\raisebox{-0.05\height}\faMobile \ ###.###.####} \\
+\end{tabularx}
+%---------------------------------------------
+\vspace{-1em}
+\section{Objective}
+Seeking a research position in data analytics and modelling of climate change. Extensive theoretical math background and research experience in climate simulation and social network analysis and Navy veteran of the Nuclear Power Program.
+\vspace{-.9em}
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\vspace{-.4em}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Technical Skills: & Python: Pandas, NetworkX, 
+Social Network Analysis, 
+Graph data, \\
+& Partial Differential Equations, 
+Atmospheric Modeling, Visualization\\
+& Extensive Graduate Math, 
+Strong problem solving, 
+Strong analytic skills\\
+Some Experience in: & FORTRAN, high performance computing, Linux command terminal, SSH\\
+\end{tabular}
+\vspace{-.9em}
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\vspace{-.4em}
+\newdimen\originwspc
+\originwspc=\fontdimen2\font
+\fontdimen2\font=.4em
+\begin{tabularx}{1.0\linewidth}{ >{\hsize=1.5\hsize\linewidth=\hsize}X >{\hsize=1.0\hsize\linewidth=\hsize}X >{\hsize=0.5\hsize\linewidth=\hsize}X }
+    \textbf{MA, Mathematics} & Arizona State University & 2022 \\
+    \textbf{BS, Mathematics} & Arizona State University & 2020 \\ 
+    Nuclear Power School and Prototype Training & United States Navy &  2011-2017
+\end{tabularx}
+\fontdimen2\font=\originwspc
+\begin{itemize}[nosep,after=\strut, leftmargin=.4em, itemsep=5pt]
+\item[] AMS Short Course (January, 2021)\\
+\hspace*{1em}\footnotesize\textit{Mathematical and Computational Methods for Complex Social Systems} \\
+\hspace*{1em}\small Topics: Topological Data Analysis, Persistent Homology, Interdisciplinary Research Methods\normalsize
+
+\item[] NSF RTG Analysis and PDE Workshop (Summer 2021)\\
+\hspace*{1em}\footnotesize\textit{National Science Foundation Research Training Group, University of Texas, Austin}\\
+\hspace*{1em}\small Topics: Distribution Theory and Calculus of Variation\normalsize
+\end{itemize}
+\vspace{-.5em}
+% EXPERIENCE SECTIONS
+\section{Work Experience}
+\vspace{-.4em}
+\textbf{Data Analysis Researcher} \hfill August 2020 - August 2022\\
+Arizona State University \hfill \textit{Tempe, AZ} 
+\vspace{-.5em}
+ \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item[] \footnotesize\textit{Measuring Organizational Impact through Network Connections}\small
+    \item[--] Developed survey methods, analyzed data and developed a dashboard application.
+    \item[--] Used techniques from geometry and topology to analyze the structural properties of data.
+    \item[--] Performed traditional Social Network Analysis in Python using Pandas and NetworkX.
+    \item[--] Generated Exponential Random Graphs to validate analyses in sparse data sets using uncertainty estimations. 
+ \end{itemize} \normalsize
+ \vspace{-1.2em}
+\textbf{Undergraduate Research Assistant} \hfill  March 2019 - August 2019\\
+Arizona State University \hfill \textit{Tempe, AZ}\hspace{-.3em}
+\vspace{-.5em}
+ \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item[] \footnotesize\textit{Reconstruction of Stratospheric Ozone Dynamics with MPAS and a High Resolution Transport Model on a Rotated Sphere}\small
+    \item[--] Forecast real weather patterns and stratospheric and atmospheric ozone dynamics related to the ozone hole using Model for Prediction Across Scales (MPAS), a FORTRAN based parallel computing software.  
+    \item[--] Used the Fourier Lagrangian transport model driven by MPAS output winds to reconstruct stratospheric ozone distribution at very high resolution.
+    \item[--] Initialized a variable resolution grid based on voronoi meshes and hybrid terrain-following isotropic levels.
+    \item[--] Constructed geodesic coordinate system transformation to avoid singularity of spherical coordinate on the pole.
+ \end{itemize}
+\normalsize
+\vspace{-1.2em}
+\textbf{Nuclear Machinist's Mate} \hfill 2011- 2017 \\
+USS Ronald Reagan - United States Navy \hfill \textit{Yokosuka, Japan and San Diego, California}\hspace{-.3em}
+\vspace{-.5em}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+\item[--] Training Coordinator - Reactor Mechanical Division \hfill February 2017- December 2017
+\item[--] Job Planner \hfill February 2016- February 2017
+\item[--] Work Center Supervisor (Maintenance Supervisor) \hfill December 2015- February 2016 \\
+\footnotesize\textit{Reactor Primary Work Center}
+\end{itemize}
+\notrmalsize
+
+\textbf{Graduate Teaching Assistant } \hfill August 2022 - December 2022 
+\vspace{-.5em}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt]
+    \item[] \footnotesize Precalculus (MAT 170) Lead recitation for 70 students in topics including functions (including trigonometric), vectors and complex numbers.\normalsize
+\end{itemize}
+
+\textbf{Instructor Assistant (Undergraduate TA)}\hfill August 2018 - May 2019
+\vspace{-.5em}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=0pt]
+\item[] \footnotesize College Mathematics (MAT 140) Numerical reasoning, sets, counting techniques, probability, basic statistics and finance.
+\item[] College Algebra (MAT 117)  Linear and quadratic functions, systems of linear equations, logarithmic and exponential functions, sequences, series, and combinatorics.\normalsize
+\end{itemize}
+
+
+\begin{comment}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Designation} & \hfill Jan 2021 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Designation} & \hfill Mar 2019 - Jan 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] long long line of blah blah that will wrap when the table fills the column width
+        \item[--] again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+\end{comment}
+%Service
+\section{Service}
+
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item[--] Peer Mentorship Program 
+    School of Math and Stats, ASU Coordinator (August 2020 - August 2022) 
+    \item[--] Respect is a Part of Research 
+    Sexual Harassment, Bystander Intervention Training 
+    Coordinator (Spring 2021) 
+    \item[--] Association for Women in Mathematics (AWM) Student Chapter
+    Arizona State University \\
+    President (May 2021 - Present)
+    Vice President (May 2020 - May 2021)
+    Undergraduate Ambassador (May 2019 - May 2020)
+    \item[--] Women Veterans Club (WVC)
+    Arizona State University
+    President (August 2018 - May 2020)
+    \item[--] The College of Liberal Arts and Sciences Student Leader 2019-2020
+\end{itemize} 
+\begin{comment}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long } \\
+\end{tabularx}
+\end{comment}
+%----------------------------------------------------------------------------------------
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
