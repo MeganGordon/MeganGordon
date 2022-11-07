@@ -1,3 +1,3 @@
 - 👋 Hi, I’m @MeganGordon
-- 🌱 I’m currently learning Social Network Analysis with Python, specifically networkx and pandas
+- 🌱 I did a project in Social Network Analysis with Python, specifically networkx and pandas
 - 📫 How to reach me mgordo15@asu.edu
